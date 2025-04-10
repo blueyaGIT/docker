@@ -24,7 +24,7 @@ all: container
 container-build:
 	@if ! docker ps | grep -q dev_container; then \
 		printf "$(YELLOW)🚧 Building the container environment 🚧 $(NC)\n"; \
-		docker compose -f ./.docker/docker-compose.yml build --no-cache; \
+		docker compose -f ./docker-compose.yml build --no-cache; \
 	else \
 		printf "$(YELLOW)🚧 Container already built.. skip build process 🚧 $(NC)\n"; \
 	fi
@@ -32,7 +32,7 @@ container-build:
 container-up:
 	@if ! docker ps | grep -q dev_container; then \
 		printf "$(YELLOW)🚧 Starting the container environment 🚧 $(NC)\n"; \
-		docker compose -p dev_container -f ./.docker/docker-compose.yml up -d; \
+		docker compose -p dev_container -f ./docker-compose.yml up -d; \
 	else \
 		printf "$(YELLOW)🚧 Container already running.. skip its creation 🚧 $(NC)\n"; \
 	fi
