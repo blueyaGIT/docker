@@ -1,0 +1,11 @@
+services:
+  ubuntu-valgrind:
+    container_name: dev_container
+    hostname: blueya
+    build:
+      context: ../
+      dockerfile: ./.docker/Dockerfile
+    volumes:
+      - ../..:/app
+    stdin_open: true
+    tty: true
