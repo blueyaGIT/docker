@@ -37,7 +37,7 @@ WORKDIR /app
 COPY ../ /app
 
 # Customize bash prompt
-RUN echo 'PS1="\[\033[34m\]webcontainer: \w# \[\033[0m\]"' >> /etc/bash.bashrc \
+RUN echo 'PS1="\[\033[34m\]dev_container: \w# \[\033[0m\]"' >> /etc/bash.bashrc \
 	python3 -m pip install --upgrade pip setuptools && \
 	python3 -m pip install norminette
 
